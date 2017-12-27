@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Welcom</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+		href="../../css/bootstrap.min.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/app.js}" />
+</head>
+<body>
+	<header><h1>Welcome v 0.0.2</h1></header>
+	<section>
+		<div th:if="${name != null}" th:text="'Hello, ' + ${name} + '!'"></div>
+		<div>I am gracefull to show this message :)</div>
+	</section>
+	<footer>
+		<small>It is static message in Welcom.html</small>
+		<span th:text="${#calendars.format(today,'dd MMMM yyyy')}">13 May 2011</span>
+	</footer>
+</body>
+</html>
