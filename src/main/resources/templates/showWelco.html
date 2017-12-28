@@ -5,6 +5,8 @@
 	<title>Welcom</title>
 	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
 		href="../../css/bootstrap.min.css" />
+	<link rel="stylesheet" th:href="@{/css/style.css}"
+		href="../../css/style.css" />
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" th:src="@{/js/app.js}" />
 </head>
@@ -13,6 +15,37 @@
 	<section>
 		<div th:if="${name != null}" th:text="'Hello, ' + ${name} + '!'"></div>
 		<div>I am gracefull to show this message :)</div>
+	</section>
+	<section>
+		<div>Practise form</div>
+		<div>
+			<form action="#" th:action="@{/api/welco}" method="post">
+				<label>header<input type="text" name="header" /></label>
+				<label>body<input type="text" name="body" /></label>
+				<label>
+				 Stage
+				 <select name="stage">
+				 	<option>KL</option>
+				 	<option>Selangor</option>
+				 </select>
+				</label>
+				<div>
+					<label>
+						Form post
+						<input type="radio" name="case" value="form-post" checked="true" />
+					</label>
+					<label>
+						JSON Model post
+						<input type="radio" name="case" value="json-model-post" />
+					</label>
+					<label>
+						JSON post
+						<input type="radio" name="case" value="json-post" />
+					</label>
+				</div>
+				<button type="submit">Test</button>
+			</form>
+		</div>
 	</section>
 	<footer>
 		<small>It is static message in Welcom.html</small>
